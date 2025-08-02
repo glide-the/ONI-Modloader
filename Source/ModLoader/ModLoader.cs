@@ -2,6 +2,7 @@ namespace ModLoader
 {
     using Harmony;
     using JetBrains.Annotations;
+    using NotNullAttribute = JetBrains.Annotations.NotNullAttribute;
     using System;
     using System.Collections.Generic;
     using System.IO;
