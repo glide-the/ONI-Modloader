@@ -48,10 +48,6 @@
       <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="JetBrains.Annotations">
-      <HintPath>..\lib\JetBrains.Annotations.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activator.cs" />
