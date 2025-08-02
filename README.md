@@ -20,6 +20,18 @@ This project uses source code of and is based on: [Harmony](https://github.com/p
 **Report Bugs** for ONI-Modloader here: https://github.com/javisar/ONI-Modloader/issues
 
 
+Building with Docker Compose
+----------------------------
+This repository includes a `docker-compose.yml` file that builds the project inside a container
+and copies the compiled binaries to your host machine. Run the following command to build and
+extract the artifacts:
+
+```
+docker compose run --rm build
+```
+
+The compiled files will be available in the local `build` directory.
+
 Mods based in Harmony
 ---------------------
 * [**Javisar's Mods**](https://github.com/javisar/ONI-Modloader-Mods) [Forum](https://forums.kleientertainment.com/forums/topic/97444-mods-trevices-mods-lair/)

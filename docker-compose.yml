@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: oni-modloader:latest
+    volumes:
+      - ./build:/output
+    command: >
+      /bin/sh -c "mkdir -p /output;
+      cp -r Source/Hook/bin/Debug/* /output/ 2>/dev/null || true;
+      cp -r Source/Injector/bin/Debug/* /output/ 2>/dev/null || true;
+      cp -r Source/ModLoader/bin/Debug/* /output/ 2>/dev/null || true;
+      cp -r Source/ModLoaderInstaller/bin/Debug/* /output/ 2>/dev/null || true"
