@@ -1,8 +1,7 @@
 namespace ModLoader
 {
     using Harmony;
-    using JetBrains.Annotations;
-    using NotNullAttribute = JetBrains.Annotations.NotNullAttribute;
+    using JetBrainsNotNull = JetBrains.Annotations.NotNullAttribute;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -148,7 +147,7 @@ namespace ModLoader
             return false;
         }
 
-        private static List<Assembly> ApplyHarmonyPatches([NotNull] List<Assembly> modAssemblies)
+        private static List<Assembly> ApplyHarmonyPatches([JetBrainsNotNull] List<Assembly> modAssemblies)
         {
             ModLogger.WriteLine("Applying Harmony patches");
             List<string> failedMods = new List<string>();
@@ -193,7 +192,7 @@ namespace ModLoader
             return loadedMods;
         }
 
-        private static void CallOnLoadMethods([NotNull] List<Assembly> modAssemblies)
+        private static void CallOnLoadMethods([JetBrainsNotNull] List<Assembly> modAssemblies)
         {
             ModLogger.WriteLine("Calling OnLoad methods");
 
@@ -233,7 +232,7 @@ namespace ModLoader
             }
         }
 
-        private static string ExceptionToString([NotNull] Exception ex)
+        private static string ExceptionToString([JetBrainsNotNull] Exception ex)
         {
             return " - " + ex.GetType().Name + ": " + ex.Message;
         }
@@ -336,7 +335,7 @@ namespace ModLoader
         {
         }
 
-        private static string BuildMessage(string baseMessage, [NotNull] List<string> mods)
+        private static string BuildMessage(string baseMessage, [JetBrainsNotNull] List<string> mods)
         {
             return baseMessage + "\n" + string.Join("\n", mods.ToArray());
         }
