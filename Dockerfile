@@ -2,9 +2,17 @@
 # Supports cross-platform builds via Docker Buildx
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
-# Install Mono and tools needed to fetch dependencies
-RUN apt-get update && apt-get install -y mono-complete curl unzip \ 
-    && rm -rf /var/lib/apt/lists/*
+# 使用阿里云镜像
+# 删掉原来的 deb 源并改用阿里云
+RUN rm -f /etc/apt/sources.list /etc/apt/sources.list.d/* && \
+    cat <<'EOF' > /etc/apt/sources.list
+deb http://mirrors.aliyun.com/debian bullseye main contrib non-free
+deb http://mirrors.aliyun.com/debian-security bullseye-security main contrib non-free
+deb http://mirrors.aliyun.com/debian bullseye-updates main contrib non-free
+EOF
+RUN apt-get update && \
+    apt-get install -y mono-complete curl unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
 COPY . .
