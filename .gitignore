@@ -14,3 +14,9 @@ Source/lib/JetBrains.*.dll
 *.zip
 Source/**/obj
 Source/**/bin
+# Build artifacts
+build/
+
+# Downloaded dependencies
+Source/lib/UnityEngine.CoreModule.dll
+Source/lib/JetBrains.Annotations.dll
